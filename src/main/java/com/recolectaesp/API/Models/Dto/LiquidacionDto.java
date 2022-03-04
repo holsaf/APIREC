@@ -10,25 +10,26 @@ import java.io.Serializable;
  * DTO para la informacion de liquidacion de un vehiculo.
  */
 @Data
-public class LiquidacionDto implements Serializable {
+public class LiquidacionDto {
 
     /**
      * placa del vehiculo
      */
-    @JsonProperty("placaVehiculo")
+    //@JsonProperty("placaVehiculo")
     private String placaVehiculo;
 
     /**
      * numero de descarga asignadas al vehiculo
      */
-    @JsonProperty("numeroDescargas")
+    //@JsonProperty("numeroDescargas")
     private Integer numeroDescargas;
 
     /**
      * total de descuentos asignados al vehiculo
      */
-    @NotNull
+
     @JsonProperty("descuentos")
+    @NotNull
     private Long totalMultas;
 
     /**

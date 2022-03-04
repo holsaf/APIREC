@@ -14,7 +14,7 @@ import java.util.Locale;
  * DTO para almacenar las liquidaciones de los vehiculos asignados a la empresa.
  */
 @Data
-public class LiquidacionesEmpresaDto implements Serializable {
+public class LiquidacionesEmpresaDto  {
 
     /**
      * Constructor para configurar la fecha de liquidacion y el nombre de la empresa, no se mapean.
@@ -30,18 +30,18 @@ public class LiquidacionesEmpresaDto implements Serializable {
     /**
      * lista de liquidaciones de los vehiculos de le empresa.
      */
-    @JsonProperty("listaLiquidaciones")
+    //@JsonProperty("listaLiquidaciones")
     private List<LiquidacionDto> listaLiquidaciones;
 
     /**
      * nombre de la empresa
      */
-    @JsonProperty("nombreEmpresa")
+    //@JsonProperty("nombreEmpresa")
     private String nombreEmpresa;
 
     /**
      * fecha de las liquidaciones
      */
-    @JsonProperty("mesLiquidacion")
+    //@JsonProperty("mesLiquidacion")
     private String mesLiquidacion;
 }

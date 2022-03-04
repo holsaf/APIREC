@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins= {"*"})
@@ -61,12 +62,11 @@ public class ConductoresController {
             respuesta = tipoResiduoService.consultarTiposDeResiduos();
 
         } catch (DataAccessException e) {
-            response.put("mensaje","Error al realizar la consulta en la base de datos!");
-            response.put("error",e.getMessage().concat(e.getMostSpecificCause().getMessage()));
+            //response.put("mensaje","Error al realizar la consulta en la base de datos!");
+            response.put("msj", Objects.requireNonNull(e.getMessage()).concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response,HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        response.put("mensaje","Tipos de Residuos enviados con EXITO");
+        //response.put("mensaje","Tipos de Residuos enviados con EXITO");
         response.put("tipoResiduos", respuesta );
         return new ResponseEntity<>(response,HttpStatus.OK);
 
@@ -96,16 +96,16 @@ public class ConductoresController {
 
        try{
            if (!vehiculoService.existeVehiculo(solicitudCeldaDto.getPlaca())){
-               response.put("mensaje", "Vehiculo de placa: ".concat(solicitudCeldaDto.getPlaca().concat( " no encontrado!")));
+               response.put("msj", "Vehiculo de placa: ".concat(solicitudCeldaDto.getPlaca().concat( " no encontrado!")));
                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
            }
            if(!conductorService.existeConductor(solicitudCeldaDto.getCedula())){
-               response.put("mensaje", "Conductor de cedula: ".concat(solicitudCeldaDto.getCedula().concat( " no encontrado!")));
+               response.put("msj", "Conductor de cedula: ".concat(solicitudCeldaDto.getCedula().concat( " no encontrado!")));
                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
            }
 
            if(!depositoService.existeDeposito(solicitudCeldaDto.getDeposito())){
-               response.put("mensaje", "El deposito: ".concat(solicitudCeldaDto.getDeposito().concat( " no encontrado!")));
+               response.put("msj", "El deposito: ".concat(solicitudCeldaDto.getDeposito().concat( " no encontrado!")));
                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
            }
 

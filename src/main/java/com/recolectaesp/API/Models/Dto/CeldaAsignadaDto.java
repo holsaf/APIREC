@@ -8,18 +8,18 @@ import java.io.Serializable;
  * DTO para enviar al usario la celda asignada.
  */
 @Data
-public class CeldaAsignadaDto implements Serializable {
+public class CeldaAsignadaDto {
 
     /**
      * placa asignada a la descarga
      */
-    @JsonProperty("placaAsignada")
+    //@JsonProperty("placaAsignada")
     private String placaAsignada;
 
     /**
      * celda asignada a la descarga
      */
-    @JsonProperty("celdaAsignada")
+    //@JsonProperty("celdaAsignada")
     public String celdaAsignada ;
 }
 

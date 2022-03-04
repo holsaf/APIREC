@@ -10,18 +10,18 @@ import java.util.List;
  * DTO para enviar al usuario los meses y años disponibles para liquidar.
  */
 @Data
-public class FechasLiquidarDto implements Serializable {
+public class FechasLiquidarDto  {
 
     /**
      * Lista de los meses disponibles.
      */
-    @JsonProperty("mesesLiquidar")
+    //@JsonProperty("mesesLiquidar")
     private List<String> mesesLiquidar;
 
     /**
      * Lista de los años disponibles.
      */
-    @JsonProperty("anosLiquidar")
+    //@JsonProperty("anosLiquidar")
     private List<Integer> anosLiquidar;
 
 }

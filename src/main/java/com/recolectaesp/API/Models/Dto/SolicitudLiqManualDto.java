@@ -12,13 +12,13 @@ import java.io.Serializable;
  * DTO para recibir los datos de la liquidacion manual
  */
 @Data
-public class SolicitudLiqManualDto implements Serializable {
+public class SolicitudLiqManualDto  {
 
 
     /**
      * mes a liquidar
      */
-    @JsonProperty("mesLiquidar")
+    //@JsonProperty("mesLiquidar")
     @Min(value= 1,message="El valor minimo para el mes es 1")
     @Max(value=12, message="El valor maximo para el mes es 12")
     private Integer mesLiquidar;
@@ -27,8 +27,7 @@ public class SolicitudLiqManualDto implements Serializable {
      * año a liquidar
      */
     @Min(value=2020, message="El valor minimo para el año es 2020") //El sistema empezo a funcionar en el año 2020
-    /*@Max(value = anoActual, message="El valor maximo para el año es el año actual")*/
-    @JsonProperty("anoLiquidar")
+    //@JsonProperty("anoLiquidar")
     private Integer anoLiquidar;
 
 }

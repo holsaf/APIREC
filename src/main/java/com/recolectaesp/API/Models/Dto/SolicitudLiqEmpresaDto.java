@@ -1,9 +1,6 @@
 package com.recolectaesp.API.Models.Dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
@@ -18,7 +15,7 @@ public class SolicitudLiqEmpresaDto {
     /**
      * mes  a liquidar
      */
-    @JsonProperty("mesLiquidar")
+    //@JsonProperty("mesLiquidar")
     @Min(value= 1,message="El valor minimo para el mes es 1")
     @Max(value=12, message="El valor maximo para el mes es 12")
     private Integer mesLiquidar;
@@ -26,16 +23,16 @@ public class SolicitudLiqEmpresaDto {
     /**
      * año a liquidar
      */
-    @Min(value=2020, message="El valor minimo para el año es 202") //El sistema empezo a funcionar en el año 2020
-    /*@Max(value = anoActual, message="El valor maximo para el año es el año actual")*/
-    @JsonProperty("anoLiquidar")
+    @Min(value=2020, message="El valor minimo para el año es 2020") //El sistema empezo a funcionar en el año 2020
+
+    //@JsonProperty("anoLiquidar")
     private Integer anoLiquidar;
 
     /**
      * NIT de la empresa
      */
-    @Size(min=9, max=10)
-    @JsonProperty("nit")
+    @Size(min=9, max=10 , message="El numero de digitos del NIT debe ser entre 9 y 10")
+    //@JsonProperty("nit")
     private String nit;
 
 }
