@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.Map;
+
 
 /**
  * DAO para la implementacion de JDBC en las funcionalidades de liquidaciones.
