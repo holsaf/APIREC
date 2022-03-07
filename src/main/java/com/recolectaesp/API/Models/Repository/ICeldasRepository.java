@@ -14,7 +14,7 @@ public interface ICeldasRepository extends JpaRepository<Celdas , Long> {
     // consulta para saber la mejor celda disponible, dependiendo del tipo de residuo y deposito se escoge la de
     // mayor capacidad disponible.
     @Query(value = "SELECT * FROM REC_CELDAS c WHERE c.id_tipo_residuo = :tipoResiduo AND c.id_deposito = :deposito " +
-            "ORDER BY c.capacidad_disponible DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
+            "ORDER BY c.capacidad_disponible DESC LIMIT 1", nativeQuery = true)
     Celdas findCeldaDisponibleByTipoResiduoAndDeposito(@Param("tipoResiduo") Integer id_tipo_residuo, @Param("deposito") Integer id_deposito);
 
 }
